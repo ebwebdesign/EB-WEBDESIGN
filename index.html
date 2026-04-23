@@ -4,82 +4,53 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>EB Web Design</title>
-  <meta name="description" content="Exklusiva, moderna hemsidor för företag som vill sticka ut. Snabb leverans, premium design och personlig service." />
+  <meta name="description" content="Exklusiva hemsidor för företag som vill sticka ut. Premium design, snabb leverans och personlig service." />
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@300;400;500;600;700&family=Inter:wght@300;400;400;500;600;700;800&family=Space+Grotesk:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@300;400;500;600;700&family=Inter:wght@300;400;500;600;700;800&family=Space+Grotesk:wght@400;500;600;700&display=swap" rel="stylesheet">
 
   <style>
     :root{
       --gold:#d8b36a;
-      --gold-2:#b8860b;
-      --bg:#07090d;
-      --bg-soft:#0d1118;
-      --bg-card:rgba(255,255,255,0.03);
-      --text:#f7f3eb;
+      --gold-dark:#b8860b;
+      --bg:#06080c;
+      --bg-soft:#0b0f15;
+      --text:#f5f1e8;
       --muted:#b8b2a6;
       --border:rgba(255,255,255,0.08);
-      --navy:#0d2348;
-      --shadow:0 20px 60px rgba(0,0,0,0.35);
-      --radius:28px;
     }
 
     *{box-sizing:border-box}
     html{scroll-behavior:smooth}
     body{
       margin:0;
+      font-family:"Inter",sans-serif;
       color:var(--text);
       background:
-        radial-gradient(circle at 10% 10%, rgba(216,179,106,0.08), transparent 28%),
-        radial-gradient(circle at 90% 30%, rgba(13,35,72,0.35), transparent 30%),
-        linear-gradient(180deg, #07090d 0%, #090c12 50%, #07090d 100%);
-      font-family:"Inter",sans-serif;
+        radial-gradient(circle at top left, rgba(216,179,106,0.06), transparent 28%),
+        radial-gradient(circle at bottom right, rgba(20,30,55,0.35), transparent 30%),
+        var(--bg);
       -webkit-font-smoothing:antialiased;
       text-rendering:optimizeLegibility;
     }
 
     a{text-decoration:none;color:inherit}
-    img{display:block;max-width:100%}
-
-    .container{
-      width:min(1240px, calc(100% - 32px));
-      margin:0 auto;
-    }
+    .container{width:min(1160px, calc(100% - 32px));margin:0 auto}
 
     .serif{
-      font-family:"Cormorant Garamond", serif;
+      font-family:"Cormorant Garamond",serif;
       font-style:italic;
       font-weight:400;
-      background:linear-gradient(135deg, #e2c07c 0%, #b8860b 100%);
+      background:linear-gradient(135deg,#e2c07c 0%,#b8860b 100%);
       -webkit-background-clip:text;
       -webkit-text-fill-color:transparent;
     }
 
-    .label{
-      display:inline-flex;
-      align-items:center;
-      gap:10px;
-      color:var(--gold);
-      font-size:10px;
-      letter-spacing:.32em;
-      text-transform:uppercase;
-      font-weight:700;
-      margin-bottom:22px;
-    }
-
-    .label::before{
-      content:"";
-      width:26px;
-      height:1px;
-      background:linear-gradient(90deg, transparent, var(--gold));
-      display:block;
-    }
-
     .glass{
-      backdrop-filter:blur(16px);
-      background:rgba(7,9,13,0.68);
+      backdrop-filter:blur(14px);
+      background:rgba(6,8,12,0.74);
       border:1px solid var(--border);
-      box-shadow:var(--shadow);
+      box-shadow:0 20px 50px rgba(0,0,0,0.32);
     }
 
     .nav{
@@ -87,7 +58,7 @@
       top:16px;
       left:16px;
       right:16px;
-      z-index:999;
+      z-index:1000;
       border-radius:24px;
     }
 
@@ -96,28 +67,25 @@
       display:flex;
       align-items:center;
       justify-content:space-between;
-      gap:24px;
-      padding:0 22px;
+      gap:20px;
+      padding:0 20px;
     }
 
     .brand{
       display:flex;
       align-items:center;
       gap:14px;
-      min-width:0;
     }
 
     .brand-icon{
       width:44px;
       height:44px;
-      border:1px solid rgba(216,179,106,0.5);
+      border:1px solid rgba(216,179,106,0.45);
       display:flex;
       align-items:center;
       justify-content:center;
       color:var(--gold);
       font-size:18px;
-      background:rgba(216,179,106,0.05);
-      box-shadow:0 0 30px rgba(216,179,106,0.08);
       flex-shrink:0;
     }
 
@@ -125,44 +93,34 @@
       font-family:"Space Grotesk",sans-serif;
       font-size:13px;
       font-weight:600;
-      text-transform:uppercase;
       letter-spacing:.2em;
+      text-transform:uppercase;
+      color:var(--gold);
       white-space:nowrap;
     }
 
     .nav-links{
       display:flex;
       align-items:center;
-      gap:34px;
+      gap:30px;
     }
 
     .nav-links a{
-      font-size:10px;
-      text-transform:uppercase;
-      letter-spacing:.26em;
-      font-weight:700;
       color:var(--muted);
+      font-size:10px;
+      font-weight:700;
+      text-transform:uppercase;
+      letter-spacing:.24em;
       transition:.25s ease;
     }
 
     .nav-links a:hover{color:var(--gold)}
 
     .nav-cta{
-      padding:14px 24px;
-      background:linear-gradient(135deg, #ffffff 0%, #f3ede2 100%);
-      color:#07090d;
-      font-size:10px;
-      font-weight:800;
-      text-transform:uppercase;
-      letter-spacing:.2em;
+      padding:14px 22px;
       border-radius:999px;
-      transition:.25s ease;
-      box-shadow:0 12px 30px rgba(255,255,255,0.08);
-    }
-
-    .nav-cta:hover{
-      transform:translateY(-2px);
-      background:linear-gradient(135deg, #e8c988 0%, #d8b36a 100%);
+      background:#f3ede2;
+      color:#07090d !important;
     }
 
     .menu-btn{
@@ -173,30 +131,25 @@
       font-size:28px;
     }
 
-    .mobile-menu{
-      display:none;
-      padding:0 14px 14px;
-    }
-
+    .mobile-menu{display:none;padding:0 14px 14px}
     .mobile-menu.open{display:block}
 
     .mobile-box{
       border-radius:22px;
       background:#090c12;
       border:1px solid rgba(255,255,255,0.1);
-      padding:18px 18px 22px;
-      box-shadow:0 24px 60px rgba(0,0,0,0.45);
+      padding:18px;
     }
 
     .mobile-box a{
       display:block;
       padding:14px 0;
-      color:var(--muted);
       border-bottom:1px solid rgba(255,255,255,0.05);
-      text-transform:uppercase;
-      letter-spacing:.22em;
+      color:var(--muted);
       font-size:11px;
       font-weight:700;
+      text-transform:uppercase;
+      letter-spacing:.22em;
     }
 
     .mobile-box a:last-of-type{border-bottom:none}
@@ -207,70 +160,48 @@
       display:inline-flex;
       justify-content:center;
       padding:15px 18px;
-      background:linear-gradient(135deg, #ffffff 0%, #f3ede2 100%);
-      color:#07090d !important;
       border-radius:999px;
+      background:#f3ede2;
+      color:#07090d !important;
       font-size:10px !important;
       letter-spacing:.2em !important;
       font-weight:800 !important;
     }
 
     .hero{
+      padding:150px 0 80px;
       min-height:100vh;
       display:flex;
       align-items:center;
-      position:relative;
-      overflow:hidden;
-      padding:140px 0 90px;
     }
 
-    .hero::before{
-      content:"";
-      position:absolute;
-      inset:0;
-      background:
-        radial-gradient(circle at 50% 50%, rgba(255,255,255,0.03), transparent 45%);
-      pointer-events:none;
+    .hero-wrap{
+      max-width:760px;
     }
 
-    .hero-grid{
-      display:grid;
-      grid-template-columns:1.08fr .92fr;
-      gap:36px;
-      align-items:center;
-      width:100%;
-    }
-
-    .hero-badge{
-      display:inline-flex;
-      align-items:center;
-      gap:10px;
-      padding:10px 16px;
-      border:1px solid rgba(216,179,106,0.3);
-      background:rgba(216,179,106,0.06);
-      border-radius:999px;
+    .eyebrow{
       color:var(--gold);
-      text-transform:uppercase;
       font-size:10px;
-      letter-spacing:.28em;
       font-weight:800;
-      margin-bottom:24px;
+      text-transform:uppercase;
+      letter-spacing:.32em;
+      margin-bottom:22px;
     }
 
-    .hero-title{
+    .hero h1{
       margin:0 0 22px;
-      font-size:clamp(52px, 9vw, 118px);
+      font-size:clamp(56px, 12vw, 110px);
       line-height:.98;
       font-weight:300;
       letter-spacing:-.06em;
     }
 
-    .hero-text{
-      max-width:720px;
-      color:var(--muted);
-      font-size:clamp(16px, 2.1vw, 20px);
-      line-height:1.9;
+    .hero p{
       margin:0 0 34px;
+      max-width:680px;
+      color:var(--muted);
+      font-size:clamp(17px, 2.2vw, 21px);
+      line-height:1.85;
     }
 
     .hero-actions{
@@ -280,451 +211,205 @@
       margin-bottom:38px;
     }
 
-    .btn-primary,
-    .btn-secondary{
+    .btn-primary,.btn-secondary{
       display:inline-flex;
       align-items:center;
       justify-content:center;
+      padding:17px 24px;
       border-radius:999px;
-      padding:17px 26px;
       font-size:11px;
       font-weight:800;
-      letter-spacing:.18em;
       text-transform:uppercase;
+      letter-spacing:.18em;
       transition:.25s ease;
     }
 
     .btn-primary{
-      background:linear-gradient(135deg, #e5c583 0%, #d8b36a 100%);
+      background:linear-gradient(135deg,#e5c583 0%,#d8b36a 100%);
       color:#07090d;
-      box-shadow:0 20px 40px rgba(216,179,106,0.16);
-    }
-
-    .btn-primary:hover{
-      transform:translateY(-2px);
-      box-shadow:0 24px 46px rgba(216,179,106,0.22);
     }
 
     .btn-secondary{
       border:1px solid rgba(255,255,255,0.12);
-      color:#fff;
       background:rgba(255,255,255,0.03);
+      color:#fff;
     }
 
-    .btn-secondary:hover{
-      border-color:rgba(216,179,106,0.35);
-      color:var(--gold);
-    }
+    .btn-primary:hover,.btn-secondary:hover{transform:translateY(-2px)}
 
-    .hero-mini{
+    .feature-grid{
       display:grid;
       grid-template-columns:repeat(3,1fr);
-      gap:18px;
-      max-width:720px;
-    }
-
-    .mini-card{
+      gap:0;
       border:1px solid rgba(255,255,255,0.08);
-      background:rgba(255,255,255,0.025);
-      border-radius:22px;
-      padding:20px;
-    }
-
-    .mini-card strong{
-      display:block;
-      color:var(--gold);
-      font-size:28px;
-      font-weight:300;
-      margin-bottom:4px;
-    }
-
-    .mini-card span{
-      display:block;
-      color:var(--muted);
-      font-size:10px;
-      text-transform:uppercase;
-      letter-spacing:.22em;
-      font-weight:800;
-      line-height:1.6;
-    }
-
-    .hero-visual{
-      position:relative;
-      min-height:600px;
-    }
-
-    .visual-main{
-      position:absolute;
-      inset:40px 0 0 60px;
-      border-radius:34px;
+      border-radius:28px;
       overflow:hidden;
-      border:1px solid rgba(255,255,255,0.1);
-      box-shadow:0 30px 80px rgba(0,0,0,0.42);
-      background:#111;
+      background:rgba(255,255,255,0.02);
+      max-width:980px;
     }
 
-    .visual-main img{
-      width:100%;
-      height:100%;
-      object-fit:cover;
-      filter:saturate(1.02) contrast(1.02);
+    .feature{
+      padding:28px 24px;
+      border-right:1px solid rgba(255,255,255,0.08);
+      text-align:center;
     }
 
-    .floating-card{
-      position:absolute;
-      border-radius:24px;
-      border:1px solid rgba(255,255,255,0.08);
-      background:rgba(9,12,18,0.86);
-      backdrop-filter:blur(12px);
-      box-shadow:0 24px 60px rgba(0,0,0,0.34);
+    .feature:last-child{border-right:none}
+
+    .feature-icon{
+      color:var(--gold);
+      font-size:32px;
+      margin-bottom:14px;
     }
 
-    .floating-top{
-      top:0;
-      left:0;
-      width:230px;
-      padding:20px;
-    }
-
-    .floating-bottom{
-      right:0;
-      bottom:0;
-      width:240px;
-      padding:22px;
-    }
-
-    .floating-card small{
+    .feature strong{
       display:block;
-      color:var(--muted);
+      margin-bottom:10px;
+      font-size:11px;
       text-transform:uppercase;
       letter-spacing:.24em;
-      font-size:9px;
       font-weight:800;
-      margin-bottom:10px;
     }
 
-    .floating-card strong{
-      display:block;
-      font-size:20px;
-      line-height:1.35;
-      letter-spacing:-.03em;
-      font-weight:500;
-    }
-
-    .floating-card p{
-      margin:10px 0 0;
+    .feature p{
+      margin:0;
       color:var(--muted);
-      line-height:1.7;
-      font-size:14px;
+      font-size:15px;
+      line-height:1.8;
     }
 
     .section{
-      padding:120px 0;
+      padding:110px 0;
       border-top:1px solid rgba(255,255,255,0.06);
     }
 
     .section-dark{
-      background:rgba(0,0,0,0.18);
+      background:rgba(0,0,0,0.16);
     }
 
-    .about-grid{
-      display:grid;
-      grid-template-columns:1fr 1fr;
-      gap:40px;
-      align-items:center;
+    .label{
+      display:inline-block;
+      margin-bottom:20px;
+      color:var(--gold);
+      font-size:10px;
+      text-transform:uppercase;
+      letter-spacing:.3em;
+      font-weight:700;
     }
 
     .heading{
       margin:0 0 22px;
-      font-size:clamp(42px, 6.8vw, 82px);
+      font-size:clamp(42px,7vw,80px);
       line-height:1.02;
       letter-spacing:-.05em;
       font-weight:300;
     }
 
-    .about-text{
+    .text{
       color:var(--muted);
       font-size:18px;
-      line-height:1.95;
-      margin:0 0 32px;
-      max-width:720px;
-    }
-
-    .about-points{
-      display:grid;
-      grid-template-columns:repeat(2,1fr);
-      gap:14px;
-      margin:0 0 34px;
-    }
-
-    .point{
-      border:1px solid rgba(255,255,255,0.08);
-      background:rgba(255,255,255,0.025);
-      border-radius:20px;
-      padding:18px;
-    }
-
-    .point strong{
-      display:block;
-      margin-bottom:6px;
-      font-size:14px;
-      letter-spacing:.08em;
-      text-transform:uppercase;
-      font-weight:700;
-    }
-
-    .point span{
-      color:var(--muted);
-      line-height:1.7;
-      font-size:14px;
-    }
-
-    .about-image-wrap{
-      position:relative;
-      min-height:620px;
-    }
-
-    .about-image{
-      position:absolute;
-      inset:0 50px 0 0;
-      overflow:hidden;
-      border-radius:34px;
-      border:1px solid rgba(255,255,255,0.1);
-      background:#111;
-      box-shadow:0 30px 70px rgba(0,0,0,0.35);
-    }
-
-    .about-image img{
-      width:100%;
-      height:100%;
-      object-fit:cover;
-    }
-
-    .about-badge{
-      position:absolute;
-      right:0;
-      bottom:36px;
-      width:220px;
-      border-radius:24px;
-      background:rgba(9,12,18,0.88);
-      border:1px solid rgba(255,255,255,0.08);
-      padding:22px;
-      box-shadow:0 24px 60px rgba(0,0,0,0.36);
-    }
-
-    .about-badge small{
-      display:block;
-      color:var(--muted);
-      font-size:9px;
-      text-transform:uppercase;
-      letter-spacing:.24em;
-      font-weight:800;
-      margin-bottom:10px;
-    }
-
-    .about-badge strong{
-      display:block;
-      font-size:28px;
-      color:var(--gold);
-      font-weight:300;
-      margin-bottom:6px;
-    }
-
-    .about-badge p{
-      margin:0;
-      color:var(--muted);
-      line-height:1.7;
-      font-size:14px;
-    }
-
-    .process-top{
-      max-width:860px;
-      margin-bottom:54px;
-    }
-
-    .process-text{
-      color:var(--muted);
       line-height:1.9;
-      font-size:18px;
       max-width:760px;
     }
 
-    .process-grid{
+    .about-grid{
       display:grid;
-      grid-template-columns:repeat(3,1fr);
-      gap:1px;
-      background:rgba(255,255,255,0.08);
+      grid-template-columns:1fr 1fr;
+      gap:24px;
+      margin-top:34px;
+    }
+
+    .about-card{
       border:1px solid rgba(255,255,255,0.08);
-      border-radius:30px;
-      overflow:hidden;
+      border-radius:24px;
+      padding:24px;
+      background:rgba(255,255,255,0.025);
     }
 
-    .process-card{
-      background:#080b10;
-      padding:36px;
-      transition:.25s ease;
-    }
-
-    .process-card:hover{
-      background:rgba(255,255,255,0.03);
-      transform:translateY(-2px);
-    }
-
-    .process-head{
-      display:flex;
-      justify-content:space-between;
-      align-items:flex-start;
-      gap:18px;
-      margin-bottom:30px;
-    }
-
-    .process-icon{
-      width:54px;
-      height:54px;
-      border-radius:18px;
-      display:flex;
-      align-items:center;
-      justify-content:center;
-      font-size:22px;
-      color:var(--gold);
-      background:rgba(216,179,106,0.06);
-      border:1px solid rgba(216,179,106,0.18);
-    }
-
-    .process-number{
-      font-family:"Cormorant Garamond", serif;
-      font-size:56px;
-      font-style:italic;
-      color:rgba(255,255,255,0.12);
-      line-height:1;
-    }
-
-    .process-card h3{
-      margin:0 0 14px;
-      font-size:20px;
+    .about-card strong{
+      display:block;
+      margin-bottom:8px;
+      font-size:14px;
       text-transform:uppercase;
       letter-spacing:.08em;
-      font-weight:700;
     }
 
-    .process-card p{
-      margin:0;
-      color:var(--muted);
-      font-size:15px;
-      line-height:1.85;
-    }
-
-    .showcase-grid{
-      display:grid;
-      grid-template-columns:1fr 1fr 1fr;
-      gap:18px;
-    }
-
-    .showcase-card{
-      border:1px solid rgba(255,255,255,0.08);
-      background:rgba(255,255,255,0.025);
-      border-radius:26px;
-      overflow:hidden;
-      box-shadow:0 20px 50px rgba(0,0,0,0.24);
-      transition:.25s ease;
-    }
-
-    .showcase-card:hover{
-      transform:translateY(-4px);
-      border-color:rgba(216,179,106,0.2);
-    }
-
-    .showcase-image{
-      height:260px;
-      overflow:hidden;
-    }
-
-    .showcase-image img{
-      width:100%;
-      height:100%;
-      object-fit:cover;
-    }
-
-    .showcase-content{
-      padding:24px;
-    }
-
-    .showcase-content small{
-      display:block;
-      color:var(--gold);
-      font-size:10px;
-      text-transform:uppercase;
-      letter-spacing:.24em;
-      font-weight:800;
-      margin-bottom:12px;
-    }
-
-    .showcase-content h3{
-      margin:0 0 12px;
-      font-size:22px;
-      letter-spacing:-.03em;
-      font-weight:500;
-    }
-
-    .showcase-content p{
-      margin:0;
+    .about-card span{
       color:var(--muted);
       line-height:1.8;
       font-size:15px;
     }
 
-    .contact-wrap{
-      max-width:980px;
-      margin:0 auto;
-      text-align:center;
+    .process-grid{
+      display:grid;
+      grid-template-columns:repeat(3,1fr);
+      gap:18px;
+      margin-top:34px;
     }
 
-    .contact-text{
-      max-width:760px;
-      margin:0 auto;
+    .process-card{
+      border:1px solid rgba(255,255,255,0.08);
+      border-radius:26px;
+      padding:28px;
+      background:rgba(255,255,255,0.025);
+    }
+
+    .process-number{
+      color:rgba(255,255,255,0.14);
+      font-family:"Cormorant Garamond",serif;
+      font-style:italic;
+      font-size:52px;
+      line-height:1;
+      margin-bottom:12px;
+    }
+
+    .process-card h3{
+      margin:0 0 12px;
+      font-size:19px;
+      text-transform:uppercase;
+      letter-spacing:.08em;
+    }
+
+    .process-card p{
+      margin:0;
       color:var(--muted);
-      line-height:1.9;
-      font-size:18px;
+      line-height:1.85;
+      font-size:15px;
     }
 
     .contact-grid{
-      margin-top:46px;
       display:grid;
       grid-template-columns:repeat(2,1fr);
       gap:18px;
+      margin-top:40px;
     }
 
     .contact-card{
       border:1px solid rgba(255,255,255,0.08);
-      background:rgba(255,255,255,0.03);
       border-radius:26px;
       padding:28px;
+      background:rgba(255,255,255,0.03);
       display:flex;
-      align-items:center;
       justify-content:space-between;
-      gap:16px;
-      text-align:left;
+      align-items:center;
+      gap:14px;
       transition:.25s ease;
     }
 
-    .contact-card:hover{
-      transform:translateY(-3px);
-      border-color:rgba(216,179,106,0.22);
-      background:rgba(255,255,255,0.04);
-    }
+    .contact-card:hover{transform:translateY(-3px)}
 
     .contact-left{
       display:flex;
       align-items:center;
-      gap:18px;
+      gap:16px;
       min-width:0;
     }
 
     .contact-icon{
-      width:56px;
-      height:56px;
+      width:54px;
+      height:54px;
       border-radius:18px;
-      border:1px solid rgba(216,179,106,0.2);
+      border:1px solid rgba(216,179,106,0.22);
       background:rgba(216,179,106,0.06);
       display:flex;
       align-items:center;
@@ -736,8 +421,8 @@
 
     .contact-meta small{
       display:block;
-      color:var(--muted);
       margin-bottom:6px;
+      color:var(--muted);
       font-size:10px;
       text-transform:uppercase;
       letter-spacing:.24em;
@@ -752,40 +437,31 @@
       word-break:break-word;
     }
 
-    .arrow{
-      color:rgba(216,179,106,0.5);
-      font-size:24px;
-      flex-shrink:0;
-    }
-
     .footer-top{
       display:grid;
       grid-template-columns:repeat(3,1fr);
-      gap:1px;
-      background:rgba(255,255,255,0.08);
       border-top:1px solid rgba(255,255,255,0.06);
+      background:rgba(0,0,0,0.24);
     }
 
     .footer-box{
-      background:rgba(0,0,0,0.26);
-      padding:34px 28px;
+      padding:30px 24px;
+      border-right:1px solid rgba(255,255,255,0.06);
     }
+
+    .footer-box:last-child{border-right:none}
 
     .footer-box small{
       display:block;
-      color:var(--muted);
       margin-bottom:10px;
+      color:var(--muted);
       font-size:10px;
       text-transform:uppercase;
       letter-spacing:.3em;
       font-weight:800;
     }
 
-    .footer-box p{
-      margin:0;
-      line-height:1.8;
-      font-size:15px;
-    }
+    .footer-box p{margin:0;line-height:1.8}
 
     .status{
       display:flex;
@@ -805,7 +481,7 @@
 
     @keyframes pulse{
       0%{transform:scale(1);opacity:1}
-      50%{transform:scale(1.22);opacity:.7}
+      50%{transform:scale(1.2);opacity:.7}
       100%{transform:scale(1);opacity:1}
     }
 
@@ -816,7 +492,7 @@
     }
 
     .subfooter-inner{
-      width:min(1240px, calc(100% - 32px));
+      width:min(1160px, calc(100% - 32px));
       margin:0 auto;
       display:flex;
       align-items:center;
@@ -828,87 +504,49 @@
     .copy{
       color:var(--muted);
       font-size:10px;
-      letter-spacing:.2em;
       text-transform:uppercase;
+      letter-spacing:.2em;
       font-weight:800;
       text-align:center;
     }
 
     .sub-links{
       display:flex;
-      gap:22px;
+      gap:20px;
       flex-wrap:wrap;
-      justify-content:center;
     }
 
     .sub-links a{
       color:var(--muted);
       font-size:10px;
-      letter-spacing:.24em;
       text-transform:uppercase;
+      letter-spacing:.24em;
       font-weight:800;
-    }
-
-    .sub-links a:hover{color:#fff}
-
-    @media (max-width: 1080px){
-      .hero-grid,
-      .about-grid,
-      .showcase-grid{
-        grid-template-columns:1fr;
-      }
-
-      .hero-visual{
-        min-height:520px;
-      }
-
-      .visual-main{
-        inset:50px 0 0 0;
-      }
-
-      .about-image{
-        inset:0;
-      }
-
-      .about-badge{
-        right:18px;
-      }
     }
 
     @media (max-width: 920px){
       .nav-links{display:none}
       .menu-btn{display:block}
       .hero{padding-top:170px}
-      .hero-mini,
+      .feature-grid,
       .process-grid,
       .contact-grid,
       .footer-top{
         grid-template-columns:1fr;
       }
-      .section{padding:96px 0}
+      .feature{border-right:none;border-bottom:1px solid rgba(255,255,255,0.08)}
+      .feature:last-child{border-bottom:none}
+      .footer-box{border-right:none;border-bottom:1px solid rgba(255,255,255,0.06)}
+      .footer-box:last-child{border-bottom:none}
+      .about-grid{grid-template-columns:1fr}
     }
 
     @media (max-width: 640px){
       .nav-inner{padding:0 16px}
-      .brand-text{font-size:11px;letter-spacing:.15em}
-      .hero-title{font-size:56px}
-      .hero-text,
-      .about-text,
-      .process-text,
-      .contact-text{font-size:16px}
-      .mini-card,
-      .process-card,
-      .showcase-content,
-      .contact-card,
-      .footer-box{padding:22px}
-      .hero-visual{min-height:420px}
-      .floating-top,
-      .floating-bottom{
-        width:180px;
-        padding:16px;
-      }
-      .floating-card strong{font-size:16px}
-      .floating-card p{font-size:12px}
+      .brand-text{font-size:11px;letter-spacing:.16em}
+      .hero h1{font-size:56px}
+      .hero p,.text{font-size:16px}
+      .feature,.process-card,.contact-card,.about-card{padding:22px}
       .subfooter-inner{justify-content:center}
     }
   </style>
@@ -919,27 +557,25 @@
     <div class="nav-inner container">
       <a href="#hem" class="brand">
         <div class="brand-icon">✦</div>
-        <div class="brand-text">EB <span style="color:var(--gold)">Web Design</span></div>
+        <div class="brand-text">EB WEB DESIGN</div>
       </a>
 
       <div class="nav-links">
         <a href="#hem">Hem</a>
-        <a href="#om-oss">Om oss</a>
+        <a href="#om">Om oss</a>
         <a href="#process">Process</a>
-        <a href="#portfolio">Exempel</a>
         <a href="#kontakt">Kontakt</a>
         <a href="#kontakt" class="nav-cta">Starta projekt</a>
       </div>
 
-      <button class="menu-btn" id="menuBtn" aria-label="Meny">☰</button>
+      <button class="menu-btn" id="menuBtn">☰</button>
     </div>
 
     <div class="mobile-menu" id="mobileMenu">
       <div class="mobile-box">
         <a href="#hem">Hem</a>
-        <a href="#om-oss">Om oss</a>
+        <a href="#om">Om oss</a>
         <a href="#process">Process</a>
-        <a href="#portfolio">Exempel</a>
         <a href="#kontakt">Kontakt</a>
         <a href="#kontakt" class="mobile-cta">Starta projekt</a>
       </div>
@@ -948,100 +584,70 @@
 
   <main>
     <section class="hero" id="hem">
-      <div class="container hero-grid">
-        <div>
-          <div class="hero-badge">✦ Premium webbdesign för företag</div>
-          <h1 class="hero-title">
-            Vi bygger <br>
-            <span class="serif">digital elegans.</span>
+      <div class="container">
+        <div class="hero-wrap">
+          <div class="eyebrow">Premium design med stark känsla</div>
+          <h1>
+            Design med <br>
+            <span class="serif">stark känsla.</span>
           </h1>
-          <p class="hero-text">
-            Exklusiva hemsidor för företag som vill upplevas starka, moderna och självsäkra online. EB Web Design kombinerar lyxig design, tydlig struktur och snabb leverans — utan att kompromissa med känslan.
+          <p>
+            Vi skapar exklusiva hemsidor för företag som vill sticka ut, bygga förtroende och ge ett starkt första intryck.
           </p>
 
           <div class="hero-actions">
             <a href="#kontakt" class="btn-primary">Kontakta oss</a>
-            <a href="#portfolio" class="btn-secondary">Se exempel</a>
+            <a href="#om" class="btn-secondary">Se exempel</a>
           </div>
 
-          <div class="hero-mini">
-            <div class="mini-card">
-              <strong>1–2 dagar</strong>
-              <span>Snabb leverans</span>
+          <div class="feature-grid">
+            <div class="feature">
+              <div class="feature-icon">⚡</div>
+              <strong>Snabb leverans</strong>
+              <p>Färdig hemsida på 1–2 dagar.</p>
             </div>
-            <div class="mini-card">
-              <strong>Premium</strong>
-              <span>Design med stark känsla</span>
+            <div class="feature">
+              <div class="feature-icon">◇</div>
+              <strong>Premium design</strong>
+              <p>Snyggt, modernt och gjort med precision.</p>
             </div>
-            <div class="mini-card">
-              <strong>100%</strong>
-              <span>Personligt engagemang</span>
+            <div class="feature">
+              <div class="feature-icon">◌</div>
+              <strong>100% engagemang</strong>
+              <p>Personlig kontakt hela vägen.</p>
             </div>
-          </div>
-        </div>
-
-        <div class="hero-visual">
-          <div class="floating-card floating-top">
-            <small>Designfokus</small>
-            <strong>Lyxig känsla. Tydlig struktur.</strong>
-            <p>Skapat för att imponera direkt och bygga förtroende.</p>
-          </div>
-
-          <div class="visual-main">
-            <img src="https://images.unsplash.com/photo-1497215728101-856f4ea42174?auto=format&fit=crop&q=80&w=1200&h=1500" alt="Premium arbetsyta">
-          </div>
-
-          <div class="floating-card floating-bottom">
-            <small>För företag</small>
-            <strong>Webbdesign som känns genomtänkt.</strong>
-            <p>Perfekt som första intryck när en kund vill se vad du kan skapa.</p>
           </div>
         </div>
       </div>
     </section>
 
-    <section class="section" id="om-oss">
-      <div class="container about-grid">
-        <div>
-          <div class="label">Om EB Web Design</div>
-          <h2 class="heading">
-            För företag som vill synas <br>
-            <span class="serif">med stil.</span>
-          </h2>
-          <p class="about-text">
-            EB Web Design är skapat för företag som vill ha mer än bara en hemsida. Här möts premiumkänsla, modern estetik och tydlig kommunikation i en helhet som lyfter varumärket. Målet är enkelt: att skapa hemsidor som känns professionella, exklusiva och värda att stanna kvar på.
-          </p>
+    <section class="section" id="om">
+      <div class="container">
+        <div class="label">Om EB Web Design</div>
+        <h2 class="heading">
+          Mer än bara en hemsida. <br>
+          <span class="serif">Ett digitalt avtryck.</span>
+        </h2>
+        <p class="text">
+          Vi kombinerar kreativ design, tydlig struktur och moderna lösningar för att skapa hemsidor som inte bara ser bra ut — utan som också gör skillnad för ditt företag.
+        </p>
 
-          <div class="about-points">
-            <div class="point">
-              <strong>Premium estetik</strong>
-              <span>Mörka toner, guldiga detaljer och ren layout som ger ett lyxigt första intryck.</span>
-            </div>
-            <div class="point">
-              <strong>Snabb process</strong>
-              <span>Effektiv arbetsgång där idé snabbt blir till färdig, snygg och modern hemsida.</span>
-            </div>
-            <div class="point">
-              <strong>Personlig känsla</strong>
-              <span>Varje sida byggs för att kännas genomtänkt och anpassad efter varumärket.</span>
-            </div>
-            <div class="point">
-              <strong>Säljbar design</strong>
-              <span>En stark exempelsida som gör det enklare att visa kunder vad du kan leverera.</span>
-            </div>
+        <div class="about-grid">
+          <div class="about-card">
+            <strong>Lyxig känsla</strong>
+            <span>Mörka toner, guldiga detaljer och ren layout som ger ett exklusivt intryck direkt.</span>
           </div>
-
-          <a href="#kontakt" class="btn-primary">Starta din hemsida</a>
-        </div>
-
-        <div class="about-image-wrap">
-          <div class="about-image">
-            <img src="https://images.unsplash.com/photo-1516321318423-f06f85e504b3?auto=format&fit=crop&q=80&w=1200&h=1500" alt="Kreativ premium arbetsmiljö">
+          <div class="about-card">
+            <strong>Tydlig struktur</strong>
+            <span>Varje sektion har ett syfte och leder besökaren vidare på ett snyggt och tryggt sätt.</span>
           </div>
-          <div class="about-badge">
-            <small>Leveranstid</small>
-            <strong>48h</strong>
-            <p>Snabb leverans utan att tappa den exklusiva känslan.</p>
+          <div class="about-card">
+            <strong>Byggd för förtroende</strong>
+            <span>Designen hjälper företag att kännas mer seriösa, moderna och professionella online.</span>
+          </div>
+          <div class="about-card">
+            <strong>Perfekt som exempel</strong>
+            <span>Den här sidan fungerar som en stark demo när du vill visa kunder vad du kan skapa.</span>
           </div>
         </div>
       </div>
@@ -1049,102 +655,44 @@
 
     <section class="section section-dark" id="process">
       <div class="container">
-        <div class="process-top">
-          <div class="label">Så går det till</div>
-          <h2 class="heading">
-            En smidig process <br>
-            <span class="serif">från idé till lansering.</span>
-          </h2>
-          <p class="process-text">
-            Tydligt, snabbt och professionellt. Processen är byggd för att kännas enkel för kunden, samtidigt som resultatet upplevs genomarbetat och exklusivt.
-          </p>
-        </div>
+        <div class="label">Så går det till</div>
+        <h2 class="heading">
+          En enkel process <br>
+          <span class="serif">med premium-resultat.</span>
+        </h2>
+        <p class="text">
+          Från första kontakt till färdig hemsida hålls processen tydlig, snabb och professionell.
+        </p>
 
         <div class="process-grid">
           <div class="process-card">
-            <div class="process-head">
-              <div class="process-icon">✉</div>
-              <div class="process-number">01</div>
-            </div>
-            <h3>Kontakt & Vision</h3>
-            <p>Vi går igenom stil, innehåll och målet med hemsidan. Fokus ligger på vad företaget vill förmedla och hur sidan ska kännas.</p>
+            <div class="process-number">01</div>
+            <h3>Kontakt</h3>
+            <p>Vi går igenom stil, innehåll och känslan företaget vill förmedla.</p>
           </div>
-
           <div class="process-card">
-            <div class="process-head">
-              <div class="process-icon">✦</div>
-              <div class="process-number">02</div>
-            </div>
-            <h3>Design & Bygge</h3>
-            <p>En lyxig och modern hemsida byggs upp med tydlig struktur, snygg layout och detaljer som stärker helhetsintrycket.</p>
+            <div class="process-number">02</div>
+            <h3>Design</h3>
+            <p>Hemsidan byggs med fokus på estetik, tydlighet och ett starkt första intryck.</p>
           </div>
-
           <div class="process-card">
-            <div class="process-head">
-              <div class="process-icon">🚀</div>
-              <div class="process-number">03</div>
-            </div>
+            <div class="process-number">03</div>
             <h3>Lansering</h3>
-            <p>När allt känns rätt publiceras sidan och är redo att visas upp. Resultatet blir en hemsida som känns både premium och trovärdig.</p>
-          </div>
-        </div>
-      </div>
-    </section>
-
-    <section class="section" id="portfolio">
-      <div class="container">
-        <div class="label">Exempel på känsla</div>
-        <h2 class="heading">
-          Design som ser <br>
-          <span class="serif">dyr och genomtänkt ut.</span>
-        </h2>
-
-        <div class="showcase-grid">
-          <div class="showcase-card">
-            <div class="showcase-image">
-              <img src="https://images.unsplash.com/photo-1524758631624-e2822e304c36?auto=format&fit=crop&q=80&w=900&h=700" alt="Exklusiv interiör">
-            </div>
-            <div class="showcase-content">
-              <small>Minimalism</small>
-              <h3>Ren och lyxig layout</h3>
-              <p>Perfekt för företag som vill kännas premium utan att sidan känns rörig eller överarbetad.</p>
-            </div>
-          </div>
-
-          <div class="showcase-card">
-            <div class="showcase-image">
-              <img src="https://images.unsplash.com/photo-1513694203232-719a280e022f?auto=format&fit=crop&q=80&w=900&h=700" alt="Design och teknik">
-            </div>
-            <div class="showcase-content">
-              <small>Närvaro</small>
-              <h3>Starkt första intryck</h3>
-              <p>En välgjord hero-sektion och tydlig struktur gör att sidan känns professionell direkt.</p>
-            </div>
-          </div>
-
-          <div class="showcase-card">
-            <div class="showcase-image">
-              <img src="https://images.unsplash.com/photo-1497366754035-f200968a6e72?auto=format&fit=crop&q=80&w=900&h=700" alt="Modern studio">
-            </div>
-            <div class="showcase-content">
-              <small>Premium</small>
-              <h3>Design som säljer in dig</h3>
-              <p>Den här sidan fungerar som ett elegant exemplar att visa upp för framtida kunder.</p>
-            </div>
+            <p>När allt känns rätt publiceras sidan och är redo att visas upp.</p>
           </div>
         </div>
       </div>
     </section>
 
     <section class="section section-dark" id="kontakt">
-      <div class="container contact-wrap">
+      <div class="container">
         <div class="label">Kontakt</div>
         <h2 class="heading">
           Redo att skapa din <br>
           <span class="serif">digitala närvaro?</span>
         </h2>
-        <p class="contact-text">
-          Oavsett om du vill ha en helt ny hemsida eller bara vill se vad som är möjligt, finns EB Web Design här för att skapa något som känns både modernt, exklusivt och trovärdigt.
+        <p class="text">
+          Hör av dig om du vill ha en modern, exklusiv hemsida som känns genomtänkt från första sekunden.
         </p>
 
         <div class="contact-grid">
@@ -1156,7 +704,7 @@
                 <strong>070-292 90 24</strong>
               </div>
             </div>
-            <div class="arrow">→</div>
+            <div>→</div>
           </a>
 
           <a href="mailto:eb.webdesign@outlook.com" class="contact-card">
@@ -1167,7 +715,7 @@
                 <strong>eb.webdesign@outlook.com</strong>
               </div>
             </div>
-            <div class="arrow">→</div>
+            <div>→</div>
           </a>
         </div>
       </div>
@@ -1197,7 +745,7 @@
       <div class="subfooter-inner">
         <a href="#hem" class="brand">
           <div class="brand-icon" style="width:34px;height:34px;font-size:14px;">✦</div>
-          <div class="brand-text" style="font-size:11px;">EB <span style="color:var(--gold)">Web Design</span></div>
+          <div class="brand-text" style="font-size:11px;">EB WEB DESIGN</div>
         </a>
 
         <div class="copy">
